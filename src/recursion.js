@@ -70,7 +70,7 @@ var isEven = function(n) {
   if (n < 0) {
     isNegative = true;
   }
-  //Declare var
+  //Declare result
     var yesEven = true;
     // BASE CASE is it equal 0
     if (n === 0) {
@@ -93,6 +93,25 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  //Declare final sum below number n
+  var sumBel = 0;
+
+    //BASE CASE
+      // finish when n equal0
+    if (n === 0) {
+      return n;
+    }
+    // RECURSIVE CASE
+      //N for negative
+      if (n < 0) {
+        n += 1;
+      } else {
+      //N for positive
+      n -= 1;
+      }
+      // Descending n elemennt
+    sumBel = n + sumBelow(n);
+    return sumBel;
 };
 
 // 6. Get the integers within a range (x, y).
