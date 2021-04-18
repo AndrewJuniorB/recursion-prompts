@@ -33,7 +33,7 @@ var sum = function(array) {
   }
   // Recursive case each element in list
   array.forEach(function(element) {
-    total = total   + sum(element);
+    total = total + sum(element);
   });
     // if its number add value to total and invoke recursive func itself
 
@@ -44,6 +44,24 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+  // Declare our result
+  var result = 0;
+  // Constraints;
+  if (array.length === 0) {
+    return 0;
+  }
+  // BASE CASE if its number
+  if (!Array.isArray(array)) {
+    // return number value
+    return array;
+  }
+  //Array case pick one -> invoke recursive func
+  array.forEach(function(item) {
+    result += arraySum(item);
+  });
+
+  // return our all sum result
+  return result;
 };
 
 // 4. Check if a number is even.
