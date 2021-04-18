@@ -7,11 +7,38 @@
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
+  if (n < 0) {
+    return null;
+  }
+  //base case
+  if (n === 0) {
+    return 1;
+  }
+// Recursive case
+return n *= factorial(n-1);
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+  var total = 0;
+  //Constraints
+  if (array.length === 0) {
+    return 0;
+  }
+  // BASE CASE if its not array but number
+  if (!Array.isArray(array)) {
+    //return this value
+    return array;
+  }
+  // Recursive case each element in list
+  array.forEach(function(element) {
+    total = total   + sum(element);
+  });
+    // if its number add value to total and invoke recursive func itself
+
+  //Return our func result
+  return total;
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
