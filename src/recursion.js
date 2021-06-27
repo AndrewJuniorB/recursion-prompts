@@ -85,7 +85,7 @@ var isEven = function(n) {
       if (isNegative) {
         return isEven(n+2);
       }
-     return isEven(n-2);
+    return isEven(n-2);
     }
 };
 
@@ -117,6 +117,18 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+var result = [];
+var step = x > y ? -1 : 1;  //
+  if (x === y) {
+    return [];
+  }
+  if (x === y - step) {
+    return result;
+  }
+
+  result = result.concat(x + step, range(x + step, y))
+
+return result;
 };
 
 // 7. Compute the exponent of a number.
