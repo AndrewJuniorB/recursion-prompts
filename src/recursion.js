@@ -6,6 +6,7 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
+
 var factorial = function(n) {
   if (n < 0) {
     return null;
@@ -114,6 +115,8 @@ var sumBelow = function(n) {
     return sumBel;
 };
 
+// ++++++++++++++++++++++++++++++++++++ STARTED HERE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
@@ -137,8 +140,19 @@ return result;
 // exponent(4,3); // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
-};
+//Base case when exponent  === 0
 
+  if (exp === 0) {
+    return 1;
+    // otherwise multiply our base to the result of exp - 1
+  } else if (exp > 0) {
+    return base * exponent(base, exp-1);
+  } else {
+    return exponent(base, exp+1)/base;
+  }
+
+};
+console.log(exponent(4,-2 ));
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
