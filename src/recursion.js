@@ -152,13 +152,26 @@ var exponent = function(base, exp) {
   }
 
 };
-console.log(exponent(4,-2 ));
+// console.log(exponent(4,-2 ));
+
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-var powerOfTwo = function(n) {
+var powerOfTwo = function(n) {  // 8 ->4 -> 2
+// power of two can be devided by two and give 1 as a result  BASE CASE
+  if ( n === 1) {
+    return true;
+    // when after n / 2 result is 0  it is false
+  } else if (n === 0) {
+    return false;
+  } else {
+    //otherwise keep calling recursion with n/2
+    return powerOfTwo(n/2);
+  }
 };
+
+console.log(powerOfTwo(3));
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
